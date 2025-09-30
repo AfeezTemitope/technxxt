@@ -18,6 +18,7 @@ class RegisterView(APIView):
                     'full_name': user.full_name
                 }
             }, status=status.HTTP_201_CREATED)
+        print(request.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 class LoginView(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -25,4 +26,5 @@ class LoginView(APIView):
         serializer = CustomTokenObtainPairSerializer(data=request.data)
         if serializer.is_valid():
             return Response(serializer.validated_data, status=status.HTTP_200_OK)
+        print(request.data)
         return Response(serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
