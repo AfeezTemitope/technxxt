@@ -1,0 +1,8 @@
+{
+  "build": {
+    "command": "python manage.py collectstatic --noinput && python manage.py migrate"
+  },
+  "start": {
+    "command": "gunicorn technxxtHub.wsgi"
+  }
+}
