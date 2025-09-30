@@ -1,1 +1,1 @@
-web: gunicorn molekSchool.wsgi
+web: gunicorn technxxtHub.wsgi
