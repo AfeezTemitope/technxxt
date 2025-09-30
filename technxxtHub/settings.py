@@ -78,10 +78,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'technxxtHub.wsgi.application'
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [config('CSRF_TRUSTED_ORIGINS'), 'https://molek-school-backend-production.up.railway.app']
 CORS_ALLOWED_ORIGINS=[
     'http://localhost:5173',
     'http://127.0.0.1:5173',
+    'https://molek-school-backend-production.up.railway.app',
     config('VERCEL'),
 ]
 
@@ -89,6 +91,9 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ],
 }
 
 # JWT Settings
