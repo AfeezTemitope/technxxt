@@ -82,12 +82,14 @@ CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS=[
     "https://pre-xt.vercel.app",
     "https://web-production-9d0ce.up.railway.app",
+    'https://technxxt.onrender.com',
 ]
 CORS_ALLOWED_ORIGINS=[
     'http://localhost:5173',
     'http://127.0.0.1:5173',
     'https://molek-school-backend-production.up.railway.app',
-    config('VERCEL'),
+    'https://pre-xt.vercel.app',
+    'https://technxxt.onrender.com',
 ]
 
 REST_FRAMEWORK = {
