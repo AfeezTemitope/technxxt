@@ -31,7 +31,6 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
 
-
 class ProgressViewSet(viewsets.ViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
@@ -44,7 +43,6 @@ class ProgressViewSet(viewsets.ViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-
 
 class ExamViewSet(viewsets.ViewSet):
     permission_classes = [permissions.IsAuthenticated]
