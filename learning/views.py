@@ -18,7 +18,7 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
     Cached for 15 minutes per user.
     """
     serializer_class = CourseSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
     def get_queryset(self):
         return Course.objects.filter(is_active=True).prefetch_related(
